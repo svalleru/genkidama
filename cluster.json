@@ -1,0 +1,63 @@
+{
+"name": "CLUSTER.LOCAL",
+"size": 60000,
+"children":
+[{
+ "name": "VC001.LOCALHOST",
+ "size": 40000,
+ "children": [
+  {
+     "name": "ESX1.LOCAL",
+     "size": 20000,
+     "children": [
+      {"name": "esx1-vm1", "size": 2000, "color": "grey"},
+      {"name": "esx1-vm2", "size": 4000, "color": "MediumSeaGreen"},
+      {"name": "esx1-vm3", "size": 6000, "color": "IndianRed"},
+      {"name": "esx1-vm4", "size": 10000, "color": "MediumSeaGreen"}
+     ]},
+     {
+     "name": "ESX2.LOCAL",
+     "size": 20000,
+     "children": [
+      {"name": "esx2-vm1", "size": 2000, "color": "MediumSeaGreen"},
+      {"name": "esx2-vm2", "size": 4000, "color": "IndianRed"},
+      {"name": "esx2-vm3", "size": 6000, "color": "MediumSeaGreen"},
+      {"name": "esx2-vm4", "size": 10000, "color": "MediumSeaGreen"}
+     ]
+    }
+   ]},
+ {
+ "name": "VC002.LOCALHOST",
+ "size": 40000,
+ "children": [
+  {
+     "name": "ESX1.LOCAL",
+     "size": 20000,
+     "children": [
+      {"name": "esx1-vm1", "size": 2000, "color": "MediumSeaGreen"},
+      {"name": "esx1-vm2", "size": 4000, "color": "MediumSeaGreen"},
+      {"name": "esx1-vm3", "size": 6000, "color": "grey"},
+      {"name": "esx1-vm4", "size": 10000, "color": "MediumSeaGreen"}
+     ]},
+     {
+     "name": "ESX2.LOCAL",
+     "size": 20000,
+     "children": [
+      {"name": "esx2-vm1", "size": 2000, "color": "MediumSeaGreen"},
+      {"name": "esx2-vm2", "size": 4000, "color": "MediumSeaGreen"},
+      {"name": "esx2-vm3", "size": 6000, "color": "IndianRed"},
+      {"name": "esx2-vm4", "size": 10000, "color": "MediumSeaGreen"}
+     ]
+    }
+   ]
+},
+  {
+     "name": "ESX_W/O_VC.LOCAL",
+     "size": 20000,
+     "children": [
+      {"name": "esx_wo_vc-vm1", "size": 2000, "color": "MediumSeaGreen"},
+      {"name": "esx_wo_vc-vm2", "size": 4000, "color": "MediumSeaGreen"},
+      {"name": "esx_wo_vc-vm3", "size": 6000, "color": "MediumSeaGreen"}
+     ]}
+]
+}
