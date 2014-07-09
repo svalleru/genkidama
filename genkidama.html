@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <meta charset="utf-8">
 <style>
 
@@ -38,7 +37,7 @@ body {
 }
 </style>
 <body>
-<script src="d3.min.js"></script>
+<script src="d3js/d3.min.js"></script>
 <script>
 var width = 1500,
     height = 900,
@@ -58,7 +57,7 @@ var svg = d3.select("body").append("svg")
 var link = svg.selectAll(".link"),
     node = svg.selectAll(".node");
 
-d3.json("cluster.json", function(error, json) {
+d3.json("jsondir/cluster.json", function(error, json) {
   root = json;
   update();
 });
@@ -117,15 +116,27 @@ function color(d) {
       : d.color;//"#fd8d3c"; // leaf node
 }
 
+function popupwindow(url, title, w, h) {
+  var left = (screen.width/2)-(w/2);
+  var top = (screen.height/2)-(h/2);
+  return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+}
+
+
 // Toggle children on click.
 function click(d) {
   if (d3.event.defaultPrevented) return; // ignore drag
   if (d.children) {
     d._children = d.children;
     d.children = null;
-  } else {
+  } else if (d._children) {
     d.children = d._children;
     d._children = null;
+  }else {
+    // This was a leaf node
+    //window.location = "?host="+d.name;
+    url = window.location.protocol+"//"+window.location.host
+    popupwindow(url+"/getinfo?host="+d.name, d.name, 1000, 800)
   }
   update();
 }
@@ -145,5 +156,3 @@ function flatten(root) {
 }
 
 </script>
-<body>
-</html>
