@@ -66,7 +66,7 @@ def main():
    """
    host = 'svalleru-esx'
    user = 'root'
-   password = 'ca$hc0w'
+   password = 'mypass'
    port = 443
    try:
       si = None
